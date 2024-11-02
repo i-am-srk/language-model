@@ -3,6 +3,7 @@ from importlib.metadata import version
 import tiktoken
 import torch
 
+# read the file
 with open(file='the-verdict.txt', mode='r', encoding='utf-8') as f:
     raw_text = f.read()
 
@@ -63,21 +64,9 @@ class SimpleTokenizer:
 
 # print(f"decoded text: {tokenizer.decode(tokenizer.encode(text))}")
 
+
 # BPE
-# print(f"toktoken version: {version('tiktoken')}")
+# print(f"tiktoken version: {version('tiktoken')}")
 tokenizer = tiktoken.get_encoding("gpt2")
 enc_text = tokenizer.encode(raw_text)
-# print(f"{len(enc_text)}")
-
-# pytorch
-# print(f"{version('torch')}")
-# print(f"pytorch acceleration availability: {torch.backends.mps.is_available()}")
-
-tensor0d = torch.tensor(1)
-print(tensor0d)
-tensor1d = torch.tensor([1, 2, 3])
-print(tensor1d)
-tensor2d = torch.tensor([[1, 2, 3],[4, 5, 6]])
-print(tensor2d)
-tensor3d = torch.tensor([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
-print(tensor3d)
+# print(f"{len(enc_text)}"
